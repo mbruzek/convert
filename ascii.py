@@ -29,6 +29,7 @@ def binary_to_ascii(bstring):
     """Convert a string with 1's and 0's to the ASCII representation."""
     return ''.join([chr(int(bstring[a:a+8], base=2)) for a in range(0, len(bstring), 8)])
 
+
 def hex_to_ascii(xstring):
     """Convert a hexadecimal string to the ASCII representation."""
     if xstring.startswith('0x'):
@@ -49,10 +50,10 @@ def command_line():
     parser = argparse.ArgumentParser(description=summary)
     parser.add_argument('-ab', '--ascii2binary', help='Convert ASCII to binary')
     parser.add_argument('-ao', '--ascii2octal', help='Convert ASCII to octal')
-    parser.add_argument('-ax', '--ascii2hex', help='Convert ASCII to hex')
+    parser.add_argument('-ax', '--ascii2hex', help='Convert ASCII to hexadecimal')
     parser.add_argument('-ba', '--binary2ascii', help='Convert binary to ASCII')
     parser.add_argument('-oa', '--octal2ascii', help='Convert octal to ASCII')
-    parser.add_argument('-xa', '--hex2ascii', help='Convert hex to ASCII')
+    parser.add_argument('-xa', '--hex2ascii', help='Convert hexadecimal to ASCII')
     arguments = parser.parse_args()
 
     if arguments.ascii2binary:
